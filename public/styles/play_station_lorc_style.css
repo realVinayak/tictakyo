@@ -1,0 +1,664 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+.main-container{
+    background-color: #161616;
+    display: grid;
+    grid-template-columns: 1fr 7fr;
+    margin: 0;
+    padding: 0;
+    max-height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+  
+}
+
+.game-board{
+    box-sizing: border-box;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: 510px;
+    width: 510px;
+    grid-template-columns: repeat(3, 170px);
+    grid-template-rows: repeat(3, 170px);
+    grid-gap: 3px;
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.game-area{
+    height: 100%;
+    width: auto;
+    justify-content: end;
+    background-color: none;
+    margin: auto;
+}
+
+html, body{
+    color: black;
+    padding: 0;
+    margin: 0;
+    height: 90%;
+    overflow: hidden;
+}
+
+.menu-bar{
+    background-color: #346751;
+    padding: 0;
+    margin: 0;
+}
+.home-but, .play-but, .puzzle-but, .learn-but{
+    cursor: pointer;
+    background-color: #2b863a;
+    color: white;
+    font-family: 'roboto', 'sans-serif';
+    width: 100%;
+    height: 8%;
+    font-size: 20px;
+    padding: 5px;
+    border: none;
+} 
+
+.home-but:hover, .play-but:hover, .puzzle-but:hover, .learn-but:hover{
+    background-color: #2b863aa9;
+} 
+.chat-area{
+    display: grid;
+    grid-template-rows: 8fr 1fr;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin: 0;
+    padding: 40px;
+    padding-bottom: 0;
+}
+
+.game-chat-area{
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    padding: 3%;
+    margin: 0;
+}
+
+.name-place-1{
+    box-sizing: border-box;
+    display: flex;
+    background-color: #C84B31;
+    font-family: 'Roboto';
+    color: white;
+    font-size: 15px;
+    padding-left: 20px;
+    width: 510px;
+    justify-content: space-between;
+    padding-right: 5px; 
+    border-radius: 5px;
+
+
+}
+.name-place-2{
+    box-sizing: border-box;
+    display: flex;
+    background-color: #C84B31;
+    font-family: 'Roboto';
+    color: white;
+    font-size: 15px;
+    padding-left: 20px;
+    width: 510px;
+    justify-content: space-between;
+    padding-right: 5px; 
+    border-radius: 5px;
+
+}
+
+.chat-connect-area{
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: 3fr 7fr;
+    background-color: #222831;
+    border-radius: 10px;
+    border:3px solid white
+
+}
+.connect{
+    background-color: rgba(0, 0, 0, 0.37);
+    height: 100%;
+    width: 100%;
+}
+
+.connect-button{
+    cursor: pointer;
+    height: 75px;
+    width: 200px;
+    margin-left: 30%;
+    margin-top: 12%;
+    background-color: #F05454;
+    color: white;
+    font-family: 'Roboto';
+    font-size: 50px;
+    border: 0;
+    border-radius: 5px;
+}
+
+.connect-button:hover{
+    background-color: #f05454be;
+}
+
+.game-board > button{
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: #A13333;
+    border-radius: 3px;
+    border: 0;
+    font-size: 90px;
+    color: white;
+    font-weight: 200;
+    text-align: center;
+}
+
+*{
+    overflow: hidden;
+}
+
+.send-message{
+    padding-top: 3px;
+    padding-left: 3px;
+}
+
+.message-area{
+    border-radius: 10px;
+    background-color: #6E85B2;
+    overflow-y: scroll;
+    padding: 13px;
+}
+
+.messages{
+    background-color: #30475E;
+    border-radius: 3px;
+    color: white;
+    font-family:'Roboto';
+    margin-top: 3px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.meta-info{
+    font-weight: bold;
+    font-size: 11px;
+    margin: 0;
+    padding: 0;
+}
+
+.main-msg{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+.send-message input[type="text"]{
+    box-sizing: border-box;
+    margin: auto;
+    width: 80%;
+    height: 70%;
+    padding: 3px;
+    font-size: 15px;
+    border-radius: 3px;
+    border: 0;
+}
+
+.send-message > button{
+    box-sizing: border-box;
+    cursor: pointer;
+    box-sizing: border-box;
+    margin: auto;
+    width: 19.036%;
+    height: 70%;
+    padding: 3px;
+    font-size: 15px;
+    border-radius: 3px;
+    border: 0;
+    background-color: #F05454;
+}
+
+.send-message > button:hover{
+    background-color: #f05454c4;
+}
+
+.comp-play-opt-overlay{
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.9); /* Black background with opacity */
+    z-index: 400; /* Specify a stack order in case you're using a different order for other elements */
+}
+.cpo-cont{
+    height: 40%;
+    width: 60%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.5fr;
+    background-color: none;
+    margin: auto;
+    margin-top: 10%;
+    grid-gap: 1rem;
+    font-family: 'Roboto';
+    color: white;
+}
+.opt-but{
+    cursor: pointer;
+    background-color: #DA0037;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 3rem;
+    border-width: 0;
+    color: white;
+    border-radius: 1rem;
+}
+.opt-but:hover{
+    background-color: #7a0321;
+}
+.connecting-overlay{
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.9); /* Black background with opacity */
+    z-index: 400; /* Specify a stack order in case you're using a different order for other elements */
+     /* Add a pointer on hover */
+}
+.connecting-container{
+    height: 80%;
+    width: 80%;
+    background-color: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+.text-anim-con{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-sizing: border-box;
+}
+.connecting-text{
+    color: white;
+    font-family: 'Roboto';
+    font-size: 5rem;
+    background-color: none;
+    box-sizing: border-box;
+}
+.connect-cancel-but{
+    color: white;
+    height: 40%;
+    width: 40%;
+    background-color: rgba(39, 39, 39, 0.986);
+    font-family: 'Roboto';
+    font-size: 3rem;
+    border-radius: 1rem;
+    border-width: 0;
+    cursor: pointer;
+}
+
+.connect-cancel-but:hover{
+    background-color: rgba(39, 39, 39, 0.719);
+}
+
+.messages-overlay{
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.8); /* Black background with opacity */
+    z-index: 500; /* Specify a stack order in case you're using a different order for other elements */
+     /* Add a pointer on hover */
+}
+.message-container{
+    height: 30%;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 12rem;
+    color: white;
+    background-color: rgba(31, 29, 29, 0.993);
+    display: grid;
+    grid-template-rows: 4fr 1.5fr;
+    font-family: 'Roboto';
+    border-radius: 1rem;
+}
+.message-text{
+    padding: 1rem;
+    font-size: 2rem;
+}
+.msg-close-button{
+    background-color: rgba(14, 13, 13, 0.836);
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.msg-close-button:hover{
+    background-color: rgb(14, 13, 13);
+}
+.bdg-prof-link{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.bdg-prof-link:hover{
+    color:rgba(153, 153, 153, 0.651);
+}
+.post-profile-show{
+    cursor: pointer;
+    color:white;
+    text-decoration: underline;
+}
+.post-profile-show:hover{
+    color:rgba(255, 255, 255, 0.664);
+}
+.profile-place-overlay{
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.9); /* Black background with opacity */
+    z-index: 10000; /* Specify a stack order in case you're using a different order for other elements */
+    /* Add a pointer on hover */
+      
+}
+
+.profile-place{
+    box-sizing: border-box;
+    width: 80%;
+    height: 80%;
+    background-color: seagreen;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+    display: grid;
+    grid-template-rows: 1fr 8fr;
+    color: white;
+    font-family: 'Roboto';
+}
+.pp-top{
+    height: 100%;
+    background-color: rgb(53, 53, 53);
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr 1fr 1fr;
+}
+.follow-main, .remove-follower, .pp-close-but, .dm_msg_main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    color: white;
+    font-family: 'Roboto';
+}
+.fl-main{
+    color: white;
+    font-family: 'Roboto';
+    font-size: 1rem;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.288);
+    border-width: 0;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.fl-main:hover{
+    background-color: rgb(0, 0, 0)
+}
+.rmv-fl-main{
+    color: white;
+    font-family: 'Roboto';
+    font-size: 1rem;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.288);
+    border-width: 0;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.rmv-fl-main:hover{
+    background-color: rgb(0, 0, 0);
+}
+.pp-close-but-main{
+    color: white;
+    font-family: 'Roboto';
+    font-size: 1rem;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.288);
+    border-width: 0;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.pp-close-but-main:hover{
+    background-color: rgb(0, 0, 0);
+}
+.dm_but_main{
+    color: white;
+    font-family: 'Roboto';
+    font-size: 1rem;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.288);
+    border-width: 0;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.dm_but_main:hover{
+    background-color: rgb(0, 0, 0);
+}
+.profile-user-name{
+    font-size: 2rem;
+    width: 80%;
+    background-color: none;
+    text-align: center;
+    margin: auto;
+    margin-top: 1rem;
+}
+
+.pp-bottom{
+    background-color: rgb(97, 97, 97);
+}
+
+.l-val{
+    color: red;
+}
+
+.pp-bottom{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+}
+
+.profile-games{
+    background-color: #423F3E;
+    height: 90%;
+    width: 90%;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+}
+.pg-header{
+    background-color: tomato;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;   
+}
+
+.pg-title{
+    font-size: 4rem;
+    font-weight: 4rem;
+    background-color: #2B2B2B;
+    width: 70%;
+    text-align: center;
+}
+.pg-stats{
+    background-color: #2B2B2B;
+    width: 30%;
+    font-weight: 1rem;
+}
+
+.pg-won{
+    color: green;
+    font-weight: 1rem;
+}
+.pg-lost{
+    color: red;
+}
+.pg-draw{
+    color: grey;
+}
+.game-history{
+    overflow-y: scroll;
+    padding: 0.5rem;
+}
+.gh{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(0, 0, 0, 0.342);
+    margin-top: 0.25rem;
+    height: 10%;
+    text-align: center;
+    border-radius: 0.5rem;
+    font-size: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+}
+.result_{
+    display: flex;
+    align-self: center;
+    width: min-content;
+    margin: auto;
+    font-size: 1rem;
+}
+.result_name{
+    display: flex;
+    align-self: center;
+    width: max-content;
+    margin: auto;
+    font-size: 1.3rem;
+    
+}
+
+.pp-followers{
+    background-color: none;
+    width: 95%;
+    height: 90%;
+    margin-top: 1rem;
+    display: grid;
+    grid-template-rows: 1fr 10fr;
+}
+
+.pp-frs-title{
+    background-color: rgb(51, 51, 51);
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.pp-frs-content{
+    overflow-y: scroll;
+    background-color: rgba(24, 24, 24, 0.815);
+}
+.pp-following{
+    background-color: rgba(24, 24, 24, 0.815);
+    width: 90%;
+    height: 90%;
+    margin-top: 1rem;
+}
+
+.pp-fng-title{
+    background-color: rgb(51, 51, 51);
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.prof-badge{
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5rem;
+    padding: 0.75rem;
+    background-color: rgb(63, 63, 63);
+    display: grid;
+    box-sizing: border-box;
+    grid-template-rows: 1fr 1fr;
+    border-radius: 0.5rem;
+}
+
+.prof-name-msg{
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.prof-name{
+    font-size: 1.2rem;
+}
+
+.prf-bdg-but-place{
+    background-color: none;
+    margin-top: 0.25rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.rmv-flwr{
+    background-color: rgb(46, 46, 46);
+    color: white;
+    border-radius: 0.25rem;
+    border-width: 0;
+    cursor: pointer;
+}
+.fl-bk{
+    background-color: rgb(46, 46, 46);
+    color: white;
+    border-radius: 0.25rem;
+    border-width: 0;
+    cursor: pointer;
+}
+.dm-msg-but-id{
+    background-color: rgb(46, 46, 46);
+    color: white;
+    border-radius: 0.25rem;
+    border-width: 0;
+    cursor: pointer;
+}
+.rmv-flwr:hover{
+    background-color: rgb(32, 32, 32);
+}
+.fl-bk:hover{
+    background-color: rgb(32, 32, 32);
+}
+.dm-msg-but-id:hover{
+    background-color: rgb(32, 32, 32);
+}

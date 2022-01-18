@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Room</title>
+    <link rel="stylesheet" href="/styles/message_room_style.css"></link>
+</head>
+<body>
+    <script>
+        let my_id = '<%= user._id %>';
+    </script>
+    <div class="main-container">
+        <div class="title-div">
+            Message Room
+        </div>
+        <div class="content-div">
+            <div class="user-names">
+            </div>
+            <div class="message-send-area">
+                <div class="message-area">
+                </div>
+                <div class="message-send">
+                    <input type="text" id="msg-text-to-send"></input>
+                    <button id="send-msg-but">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/scripts/message_room_script.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/styles/register_page_style.css"></link> 
+</head>
+<body>
+    <div class="animation-area">
+        <ul class="box-area">
+			<li>◯</li>
+            <li>◯</li>
+            <li>◯</li>
+            <li>◯</li>
+            <li>◯</li>
+			<li>╳</li>
+			<li>╳</li>
+            <li>╳</li>
+            <li>╳</li>
+            <li>╳</li>
+            <li>╳</li>
+		</ul>
+        <div class="main-cont-area">
+            <div class="main-cont-div">
+                <div class="title-cont">
+                    <div class="title">Register</div>
+                </div>
+                <form action='/users/register' method="POST">
+                    <div class="message">
+                    <%- include ('./partials/messages') %>
+                    </div>
+                    <br>
+                    <div class="input-sub-div">
+                        <div class="input-div">
+                            <div class="input-area">
+                                <label>Full Name</label>
+                                <input type="text" name="userName" id="username">
+                            </div>
+                            <div class="input-area">
+                                <label>Email</label>
+                                <input type="text" name="userEmail" id="useremail">
+                            </div>
+                            <div class="input-area">
+                                <label>Password</label>
+                                <input type="password" name="userPassword" id="userpass">
+                            </div>
+                            <div class="input-area">
+                                <label>Password Again</label>
+                                <input type="password" name="userPassword2" id="userpass2">
+                            </div>
+                        </div>
+                        <div class="but-area">
+                            <button type="submit">Register</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+</div>
+</body>
+</html>

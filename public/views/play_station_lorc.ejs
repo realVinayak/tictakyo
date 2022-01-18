@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/play_station_lorc_style.css">
+</head>
+<body>
+    <script>
+        //let user_id = '<%= user._id %>';
+        let user_name = '<%= user.name %>';
+        let isLive = '<%= isLive %>';
+        let user_id = '<%= user._id %>';
+    </script>
+    <div class="main-container">
+        <div class="profile-place-overlay">
+            <div class="profile-place">
+                <div class="pp-top">
+                    <div class="profile-user-name">
+                        UserName
+                    </div>
+                    <div class="dm_msg_main"><button class="dm_but_main">Message</button></div>
+                    <div class="follow-main"><button class="fl-main">Follow</button></div>
+                    <div class="remove-follower"><button class="rmv-fl-main">Remove Follower</button></div>
+                    <div class="pp-close-but"><button class="pp-close-but-main">Close</button></div>
+                </div>
+                <div class="pp-bottom">
+                    <div class="profile-games">
+                        <div class="pg-header">
+                            <div class="pg-title">Games</div>
+                            <div class="pg-stats">
+                                <div class="pg-tot">Total: </div>
+                                <div class="pg-won">Won: </div>
+                                <div class="pg-lost">Lost: </div>
+                                <div class="pg-draw">Draw: </div>
+                            </div>
+                        </div>
+                        <div class="game-history">
+                            <div class="gh">
+                                <div class="result_" style="color:red">Lost</div>
+                                <div class="result_name" style="color: red">O:&nbsp;<span class="bdg-prof-link">James</span></div>
+                                <div class="result_name" style="color: green">X:&nbsp;<span class="bdg-prof-link">Vinayak</span></div>
+                                <div class="result_" style="color:green">Won</div>
+                            </div>
+                            <div class="gh">
+                                <div class="result_" style="color:red">Lost</div>
+                                <div class="result_name" style="color: red">O: James</div>
+                                <div class="result_name" style="color: green">X: Vinayak</div>
+                                <div class="result_" style="color:green">Won</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pp-followers">
+                        <div class="pp-frs-title">
+                            Followers (800)
+                        </div>
+                        <div class="pp-frs-content">
+                            <div class="prof-badge">
+                                <div class="prof-name-msg">
+                                    <div class="prof-name"><span class="bdg-prof-link" onClick="()=>{alert('Hello!')}">James</span></div>
+                                    <div class="prof-bdg-msg"><button class="dm-msg-but-id">Message</button></div>
+                                </div>
+                                <div class="prf-bdg-but-place">
+                                    <button class="rmv-flwr">Remove Follower</button>
+                                    <button class="fl-bk">Follow Back</button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                    <div class="pp-following">
+                        <div class="pp-fng-title">
+                            Following (800)
+                        </div>
+                        <div class="pp-fng-content">
+                            <div class="prof-badge">
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="messages-overlay">
+            <div class="message-container">
+                <div class="message-text"></div>
+                <div class="msg-close-button">Close</div>
+            </div>
+        </div>
+        <div class="comp-play-opt-overlay">
+            <div class="cpo-cont">
+                <button id="o-option" class="opt-but">O</button>
+                <button id="x-option" class="opt-but">X</button>
+                <button id="ran-option" class="opt-but">Random</button>
+            </div>
+        </div>
+        <div class="connecting-overlay">
+            <div class="connecting-container">
+                    <div class="text-anim-con">
+                        <div class="connecting-text">Connecting with Another User</div>
+                        <div class="connecting-animation">
+                            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                            <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_Xho5ht.json"  background="transparent"  speed="1"  style="width: 15rem; height: 15rem;"  loop  autoplay></lottie-player>
+                        </div>
+                    </div>
+                    <div class="connecting-cancel-but">
+                        <button id="connect-cancel" class='connect-cancel-but'>Cancel</button>
+                    </div>
+            </div>
+        </div>
+        <div class="menu-bar">
+            <div class="logo"></div>
+                <button class="home-but" onclick="window.location.href='/dashboard'">Home</button>
+                <button class="play-but" onclick="window.location.href='/play_station'">Play</button>
+                <button class="puzzle-but">Puzzles</button>
+                <button class="learn-but">Learn</button> 
+        </div>
+        <div class="game-chat-area">
+            <div class="game-area">
+                <div class="name-place-1"><h3 class="other_player">Opponent</h3></div>
+                <div class="game-board">
+                    <button id="but1" class="tic-tac-but"></button>
+                    <button id="but2" class="tic-tac-but"></button>
+                    <button id="but3" class="tic-tac-but"></button>
+                    <button id="but4" class="tic-tac-but"></button>
+                    <button id="but5" class='tic-tac-but'></button>
+                    <button id="but6" class='tic-tac-but'></button>
+                    <button id="but7" class='tic-tac-but'></button>
+                    <button id="but8" class='tic-tac-but'></button>
+                    <button id="but9" class='tic-tac-but'></button>
+                </div>
+                <div class="name-place-2"><h3 class="me_player">You</h3></div>
+            </div>
+            <div class="chat-connect-area">
+                <div class='connect'><% if (isLive === true) { %>
+                    <div><button id="connect-another-user" class='connect-button'>Connect</button></div>
+                        <% }else{ %>
+                    <div><button id="connect-with-computer" class='connect-button'>Play</button></div>
+                <% } %>
+                </div>
+                <div class="chat-area">
+                    <div class="message-area">
+                    </div>
+                    <div class="send-message">
+                        <input type='text' id="message_to_send">
+                        <button id="send-message-button">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/scripts/play_station_lorc_script.js"></script>
+    <div class="animation_stuff">
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,882 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+*{box-sizing: border-box; -webkit-box-sizing: border-box; }
+html, body{
+    padding: 0;
+    margin: 0;
+    height: 90%;
+    overflow: hidden;
+    background-color: black;
+}
+*{
+    overflow: hidden;
+}
+.main-container{
+    background-color: #161616;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+}
+.menu_bar{
+    box-sizing: border-box;
+    border-radius: 1rem;
+    margin-left: 1rem;
+    margin-top: 5rem;
+    height: 80%;
+    width: 100%;
+    background-color: rgb(46, 46, 46);
+    padding: 2rem;
+    display: grid;
+    grid-template-rows: auto auto auto;
+}
+.menu-item{
+    width: 100%;
+    height: 80%;
+    color: white;
+    font-family: 'Roboto';
+    font-size: 2rem;
+    background-color: #2b863a;
+    cursor: pointer;
+    border-radius: 1rem;
+    border-width: 0;
+}
+.menu-item:hover{
+    background-color: #2b863abe;
+}
+
+.feed-name-container{
+    box-sizing: border-box;
+    width: 85%;
+    margin: 1rem;
+    box-sizing: border-box;
+    background-color: none;
+    display: grid;
+    grid-template-rows: 1.5fr 10fr;
+    padding: 1rem;
+}
+
+.name-container{
+    box-sizing: border-box;
+    background-color: #242222;
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+    font-family: "Roboto";
+    padding-top: 1rem;
+    margin-top: 1rem;
+    width: 90%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1rem;
+}
+
+.feed-container{
+    display: grid;
+    box-sizing: border-box;
+    border-radius: 1rem;
+    height: 90%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4%;
+    background-color: khaki;
+    grid-template-columns: 1fr 8fr 1fr;
+}
+
+.prev-button{
+    cursor: pointer;
+    background-color: none;
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.prev-button:hover{
+    background-color: rgba(0, 0, 0, 0.247);
+}
+.next-button:hover{
+    background-color: rgba(0, 0, 0, 0.247);
+}
+.next-button{
+    cursor: pointer;
+    background-color: none;
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+
+.button-place{
+    height: 100%;
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+    display: flex;
+    align-content: flex-start;
+    flex-direction: ri
+}
+.but-text{
+    align-self: center;
+    font-size: 3rem;
+}
+
+.main-feed{
+    display: grid;
+    grid-template-rows: 1fr 9fr 1fr;
+}
+
+.add-button{
+    cursor: pointer;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 1rem;
+}
+
+.add-button:hover{
+ background-color: rgba(0, 0, 0, 0.247);;   
+}
+
+.postFormOverlay{
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.8); /* Black background with opacity */
+    z-index: 300; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+.postForm{
+    background-color: #171717;
+    height: 60%;
+    width: 40%;
+    margin: auto;
+    margin-top: 10%;
+    border-radius: 1rem;
+    display: grid;
+    grid-template-rows: 0.75fr 4fr 1fr;
+    padding: 1rem;
+    grid-gap: 0.4rem;
+}
+
+.form_title_place{
+    font-family: 'Roboto';
+    font-size: 1.04rem;
+    padding: 0.5rem;
+    background-color: #DA0037;
+    color: white;
+    border-radius: 1rem;
+}
+
+.form_title_place input[type='text']{
+    padding: 0.2rem;
+    margin-left: 1rem;
+    background-color: white;
+    width: 60%;
+    height: 90%;
+    font-size: 1rem;
+}
+.form_content_place{
+    font-family: 'Roboto';
+    font-size: 1.04rem;
+    padding: 0.5rem;
+    background-color: #DA0037;
+    color: white;
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+.form_content_place > textarea{
+    padding: 0.2rem;
+    margin-left: 1rem;
+    background-color: white;
+    width: 90%;
+    height: 90%;
+    font-size: 1rem;
+    font-family: 'Roboto';
+    margin-left: 1.8rem;
+}
+.form_but_place{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: none;
+    border-radius: 1rem;
+    grid-gap: 0.25rem;
+}
+.form_button{
+    cursor: pointer;
+    text-align: center;
+    background-color: #EDEDED;
+    padding-top: 1.1rem;
+    color: black;
+    font-size: 1.5rem;
+    font-family: 'Roboto';
+}
+
+.form_button:hover{
+    background-color: #edededc7;
+}
+
+.type-of-posts{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 2rem;
+    color: black;
+    font-family: 'Roboto';
+    font-size: 1.5rem;
+}
+
+.user-posts-but{
+    cursor: pointer;
+    text-align: center;
+    padding-top: 0.5rem;
+    margin: 0.25rem;
+    border-radius: 1rem;
+}
+
+.feed-but{
+    cursor: pointer;
+    text-align: center;
+    padding-top: 0.5rem;
+    margin: 0.25rem;
+    border-radius: 1rem;
+}
+
+.liked-posts-but{
+    cursor: pointer;
+    text-align: center;
+    padding-top: 0.5rem;
+    margin: 0.25rem;
+    border-radius: 1rem;
+}
+
+.user-posts-but:hover{
+    background-color: rgba(0,0,0,0.2);
+}
+
+.feed-but:hover{
+    background-color: rgba(0,0,0,0.2);
+}
+.liked-posts-but:hover{
+    background-color: rgba(0,0,0,0.2);
+}
+
+.feed-post{
+    display: grid;
+    box-sizing: border-box;
+    grid-template-rows: 1fr 2.6fr 0.4fr;
+    grid-gap: 1rem;
+    background-color: rgba(0,0,0,0.7);
+    color: white;
+    border-radius: 1rem;
+    height: 100%;
+    margin-bottom: 1rem;
+    font-family: 'Roboto';
+}
+.like_post{
+    width: 80%;
+    height: 80%;
+    background-color: rgb(231, 228, 228);
+    margin-bottom: 0.25rem;
+    font-family: 'Roboto';
+    color: black;
+    margin: auto;
+    font-size: 1rem;
+    border-width: 0;
+    cursor: pointer;
+}
+.like_post:hover{
+    background-color: rgba(231, 228, 228, 0.733);
+}
+.meta-info{
+    padding-left: 5%;
+    padding-top: 1%;
+    font-size: 1rem;
+    margin: 0;
+}
+.post-title{
+    padding-left: 5%;
+    font-size: 1.35rem;
+}
+.post-title > p{
+    font-weight: bolder;
+    margin: 0;
+    padding: 0;
+}
+.post-content{
+    padding-left: 3%;
+}
+
+.post-content > p{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+.post_top{
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+}
+
+.misc-container{
+    height: 100%;
+    background-color: none;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    margin-right: 3rem;
+    width: 120%;
+    margin-left: -7rem;
+}
+
+.user-badge{
+    margin-top: 4rem;
+    background-color: crimson;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    color: white;
+}
+
+.user-name-area{
+    margin-top: 0.25rem;
+    font-family: "Roboto";
+    font-size: 1.5rem;
+    padding: 1rem;
+    border-bottom: 0.25rem solid white;
+}
+
+.profile-but{
+    background-color: none;
+    height: 23%;
+    padding-top: 0.25rem;
+}
+
+.notif-but{
+    background-color: none;
+    height: 23%;
+    padding-top: 0.25rem;
+}
+.msgs-but{
+    background-color: none;
+    height: 30%;
+    padding-top: 0.25rem;
+}
+
+.bdg-but-1{
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.25rem;
+    font-family: 'Roboto';
+    background-color: none;
+    box-sizing: border-box;
+    height: 80%;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.125rem;
+    padding: 0.25rem;
+    padding-top: 0.4rem;
+    border-radius: 1rem;
+}
+
+.bdg-but-2{
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.25rem;
+    font-family: 'Roboto';
+    background-color: none;
+    box-sizing: border-box;
+    height: 80%;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.125rem;
+    padding: 0.25rem;
+    padding-top: 0.4rem;
+    border-radius: 1rem;
+}
+
+.bdg-but-3{
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.25rem;
+    font-family: 'Roboto';
+    background-color: none;
+    box-sizing: border-box;
+    height: 80%;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.125rem;
+    padding: 0.25rem;
+    padding-top: 0.7rem;   
+    border-radius: 1rem; 
+}
+
+.bdg-but-1:hover{
+    background-color: rgba(0,0,0,0.2);
+}
+.bdg-but-2:hover{
+    background-color: rgba(0,0,0,0.2);
+}
+.bdg-but-3:hover{
+    background-color: rgba(0,0,0,0.2);
+}
+
+.misc-stats{
+    background-color: #24222273;
+    color: white;
+    margin-top: -3rem;
+    width: 100%;
+    padding: 1rem;
+    height: 40%;
+    border-radius: 1rem;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    font-family: "Roboto";
+    grid-gap: 0;
+    border: solid white;
+    border-width: 0.125rem;
+}
+
+.stat-header{
+    margin-top: -0.25rem;
+    font-size: 1.3rem;
+    padding-left: 1rem;
+}
+.stat-header > hr{
+    margin-left: -0.75rem;
+    background-color: white;
+}
+
+
+.stat-text{
+    margin-top: -0.5rem;
+    
+}
+
+.stat-text > hr{
+    background-color: white;
+    margin-left: 0.2rem;
+}
+
+.num-games{
+    display: flex;
+    justify-content: space-between;
+}
+.w-l-d{
+    display: flex;
+    justify-content: space-between;
+}
+.w-l-d-val{
+    display: flex;
+}
+
+.w-l-d-val > p{
+    padding: 0;
+    margin: 0;
+}
+
+.w-val{
+    color: green;
+}
+.bdg-prof-link{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.bdg-prof-link:hover{
+    color:rgba(153, 153, 153, 0.651);
+}
+.post-profile-show{
+    cursor: pointer;
+    color:white;
+    text-decoration: underline;
+}
+.post-profile-show:hover{
+    color:rgba(255, 255, 255, 0.664);
+}
+.profile-place-overlay{
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.9); /* Black background with opacity */
+    z-index: 10000; /* Specify a stack order in case you're using a different order for other elements */
+    /* Add a pointer on hover */
+      
+}
+
+.profile-place{
+    box-sizing: border-box;
+    width: 80%;
+    height: 80%;
+    background-color: seagreen;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+    display: grid;
+    grid-template-rows: 1fr 8fr;
+    color: white;
+    font-family: 'Roboto';
+}
+.pp-top{
+    height: 100%;
+    background-color: rgb(53, 53, 53);
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr 1fr 1fr;
+}
+.follow-main, .remove-follower, .pp-close-but, .dm_msg_main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    color: white;
+    font-family: 'Roboto';
+}
+.fl-main{
+    color: white;
+    font-family: 'Roboto';
+    font-size: 1rem;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.288);
+    border-width: 0;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.fl-main:hover{
+    background-color: rgb(0, 0, 0)
+}
+.rmv-fl-main{
+    color: white;
+    font-family: 'Roboto';
+    font-size: 1rem;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.288);
+    border-width: 0;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.rmv-fl-main:hover{
+    background-color: rgb(0, 0, 0);
+}
+.pp-close-but-main{
+    color: white;
+    font-family: 'Roboto';
+    font-size: 1rem;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.288);
+    border-width: 0;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.pp-close-but-main:hover{
+    background-color: rgb(0, 0, 0);
+}
+.dm_but_main{
+    color: white;
+    font-family: 'Roboto';
+    font-size: 1rem;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.288);
+    border-width: 0;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.dm_but_main:hover{
+    background-color: rgb(0, 0, 0);
+}
+.profile-user-name{
+    font-size: 2rem;
+    width: 80%;
+    background-color: none;
+    text-align: center;
+    margin: auto;
+    margin-top: 1rem;
+}
+
+.pp-bottom{
+    background-color: rgb(97, 97, 97);
+}
+
+.l-val{
+    color: red;
+}
+
+.pp-bottom{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+}
+
+.profile-games{
+    background-color: #423F3E;
+    height: 90%;
+    width: 90%;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+}
+.pg-header{
+    background-color: tomato;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;   
+}
+
+.pg-title{
+    font-size: 4rem;
+    font-weight: 4rem;
+    background-color: #2B2B2B;
+    width: 70%;
+    text-align: center;
+}
+.pg-stats{
+    background-color: #2B2B2B;
+    width: 30%;
+    font-weight: 1rem;
+}
+
+.pg-won{
+    color: green;
+    font-weight: 1rem;
+}
+.pg-lost{
+    color: red;
+}
+.pg-draw{
+    color: grey;
+}
+.game-history{
+    overflow-y: scroll;
+    padding: 0.5rem;
+}
+.gh{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(0, 0, 0, 0.342);
+    margin-top: 0.25rem;
+    height: 10%;
+    text-align: center;
+    border-radius: 0.5rem;
+    font-size: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+}
+.result_{
+    display: flex;
+    align-self: center;
+    width: min-content;
+    margin: auto;
+    font-size: 1rem;
+}
+.result_name{
+    display: flex;
+    align-self: center;
+    width: max-content;
+    margin: auto;
+    font-size: 1.3rem;
+    
+}
+
+.pp-followers{
+    background-color: none;
+    width: 95%;
+    height: 90%;
+    margin-top: 1rem;
+    display: grid;
+    grid-template-rows: 1fr 10fr;
+}
+
+.pp-frs-title{
+    background-color: rgb(51, 51, 51);
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.pp-frs-content{
+    overflow-y: scroll;
+    background-color: rgba(24, 24, 24, 0.815);
+}
+.pp-following{
+    background-color: rgba(24, 24, 24, 0.815);
+    width: 90%;
+    height: 90%;
+    margin-top: 1rem;
+}
+
+.pp-fng-title{
+    background-color: rgb(51, 51, 51);
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.prof-badge{
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5rem;
+    padding: 0.75rem;
+    background-color: rgb(63, 63, 63);
+    display: grid;
+    box-sizing: border-box;
+    grid-template-rows: 1fr 1fr;
+    border-radius: 0.5rem;
+}
+
+.prof-name-msg{
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.prof-name{
+    font-size: 1.2rem;
+}
+
+.prf-bdg-but-place{
+    background-color: none;
+    margin-top: 0.25rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.rmv-flwr{
+    background-color: rgb(46, 46, 46);
+    color: white;
+    border-radius: 0.25rem;
+    border-width: 0;
+    cursor: pointer;
+}
+.fl-bk{
+    background-color: rgb(46, 46, 46);
+    color: white;
+    border-radius: 0.25rem;
+    border-width: 0;
+    cursor: pointer;
+}
+.dm-msg-but-id{
+    background-color: rgb(46, 46, 46);
+    color: white;
+    border-radius: 0.25rem;
+    border-width: 0;
+    cursor: pointer;
+}
+.rmv-flwr:hover{
+    background-color: rgb(32, 32, 32);
+}
+.fl-bk:hover{
+    background-color: rgb(32, 32, 32);
+}
+.dm-msg-but-id:hover{
+    background-color: rgb(32, 32, 32);
+}
+
+.notif-overlay{
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.9); /* Black background with opacity */
+    z-index: 10000; /* Specify a stack order in case you're using a different order for other elements */
+    /* Add a pointer on hover */
+}
+.notif-panel{
+    height: 80%;
+    width: 60%;
+    background-color: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    display: grid;
+    grid-template-rows: 10% 90%;
+    font-family: 'Roboto';
+    color: white;
+}
+.notif-panel-header{
+    background-color: grey;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    padding: 0.25rem;
+}
+.nf-title{
+    font-size: 2.5rem;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.nf-button{
+    background-color: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.nf-button > button{
+    height: 80%;
+    width: 40%;
+    background-color: black;
+    color: white;
+    border-radius: 0.5rem;
+    border-width: 0;
+    align-self: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+.nf-button > button:hover{
+    background-color: rgb(59, 59, 59)
+}
+.notif-panel-content{
+    background-color: rgb(80, 80, 80);
+    max-height: 100%;
+    overflow-y: scroll;
+}
+.notif-div{
+    background-color: rgb(56, 56, 56);
+    height: fit-content;
+    padding: 0.75rem;
+    font-size: 1.3rem;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5rem;
+    border-radius: 0.5rem;
+}

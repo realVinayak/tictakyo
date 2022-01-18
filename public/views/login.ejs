@@ -1,0 +1,61 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Login</title>
+     <link rel="stylesheet" href="/styles/login_page_style.css"></link> 
+ </head>
+ <body>
+    <div class="animation-area">
+        <ul class="box-area">
+			<li>◯</li>
+            <li>◯</li>
+            <li>◯</li>
+            <li>◯</li>
+            <li>◯</li>
+			<li>╳</li>
+			<li>╳</li>
+            <li>╳</li>
+            <li>╳</li>
+            <li>╳</li>
+            <li>╳</li>
+		</ul>
+        <div class="main-cont-area">
+            <div class="main-cont-div">
+                <div class="title-div"><div class="title">Login</div></div>
+                <div class="form-div">
+                    <form action="/users/login" method="POST">
+                        <div class="message">
+                    <%- include ('./partials/messages') %>
+                    </div>
+                        <div class="form-div-input">
+                            <div class="input-cont">
+                                <div class="input-area">
+                                <label>Enter Email: </label>
+                                <input type="text" name="email" id="inputname">
+                                </div>
+                                <div class="input-area">
+                                <label>Enter Password: </label>
+                                <input type="password" name="password" id="inputpassword">
+                                </div>
+                            </div>
+                            <div class="but-cont">
+                                <button type="submit">Login</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="register-redirect">
+                    New User?
+                    <a href="/users/register">Register</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+ </body>
+ </html>
+ 

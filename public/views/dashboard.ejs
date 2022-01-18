@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/styles/dashboard_style.css"></link>
+</head>
+<body>
+    <script>
+        let userId = '<%= user._id %>';
+        let userName = '<%= user.name %>'
+        console.log(userId);
+    </script>
+    <div class="profile-place-overlay">
+        <div class="profile-place">
+            <div class="pp-top">
+                <div class="profile-user-name">
+                    UserName
+                </div>
+                <div class="dm_msg_main"><button class="dm_but_main">Message</button></div>
+                <div class="follow-main"><button class="fl-main">Follow</button></div>
+                <div class="remove-follower"><button class="rmv-fl-main">Remove Follower</button></div>
+                <div class="pp-close-but"><button class="pp-close-but-main">Close</button></div>
+            </div>
+            <div class="pp-bottom">
+                <div class="profile-games">
+                    <div class="pg-header">
+                        <div class="pg-title">Games</div>
+                        <div class="pg-stats">
+                            <div class="pg-tot">Total: </div>
+                            <div class="pg-won">Won: </div>
+                            <div class="pg-lost">Lost: </div>
+                            <div class="pg-draw">Draw: </div>
+                        </div>
+                    </div>
+                    <div class="game-history">
+                        <div class="gh">
+                            <div class="result_" style="color:red">Lost</div>
+                            <div class="result_name" style="color: red">O:&nbsp;<span class="bdg-prof-link">James</span></div>
+                            <div class="result_name" style="color: green">X:&nbsp;<span class="bdg-prof-link">Vinayak</span></div>
+                            <div class="result_" style="color:green">Won</div>
+                        </div>
+                        <div class="gh">
+                            <div class="result_" style="color:red">Lost</div>
+                            <div class="result_name" style="color: red">O: James</div>
+                            <div class="result_name" style="color: green">X: Vinayak</div>
+                            <div class="result_" style="color:green">Won</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pp-followers">
+                    <div class="pp-frs-title">
+                        Followers (800)
+                    </div>
+                    <div class="pp-frs-content">
+                        <div class="prof-badge">
+                            <div class="prof-name-msg">
+                                <div class="prof-name"><span class="bdg-prof-link" onClick="()=>{alert('Hello!')}">James</span></div>
+                                <div class="prof-bdg-msg"><button class="dm-msg-but-id">Message</button></div>
+                            </div>
+                            <div class="prf-bdg-but-place">
+                                <button class="rmv-flwr">Remove Follower</button>
+                                <button class="fl-bk">Follow Back</button>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="pp-following">
+                    <div class="pp-fng-title">
+                        Following (800)
+                    </div>
+                    <div class="pp-fng-content">
+                        <div class="prof-badge">
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="postFormOverlay">
+        <div class="postForm">
+            <div class="form_title_place">
+                <label for="_postTitle">Post Title (Max 100 Chars)</label>
+                <input type="text" name="postTitle" id="_postTitle" maxlength="100" required=true>
+            </div>
+            <div class="form_content_place">
+                <label for="_postContent">Content (Max 500 chars)</label>
+                <textarea name="postContent" id="_postContent" maxlength="500" required=true></textarea>
+            </div>
+            <div class="form_but_place">
+                <div class="form_button" id="postBut">Post</div>
+                <div class="form_button" id="saveDraftBut">Save as Draft</div>
+                <div class="form_button" id="cancelBut">Cancel</div>
+            </div>
+        </div>
+    </div>
+    <div class="notif-overlay">
+        <div class="notif-panel">
+            <div class="notif-panel-header">
+                <div class="nf-title">Notifications</div>
+                <div class="nf-button"><button id="notif-close">Close</button></div>
+            </div>
+            <div class="notif-panel-content">
+                <div class="notif-div"></div>
+            </div>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="menu_bar">
+            <button class="menu-item" id="play-but">Play</button>
+            <button class="menu-item" id="puz-but">Puzzles</button>
+            <button class="menu-item" id="learn-but">Learn</button>
+        </div>
+        <div class="feed-name-container">
+            <div class="name-container">Hello, <%= user.name %></div>
+            <div class="feed-container">
+                <div class="button-place"><div class="prev-button"><div class="but-text">&#10092;</div></div></div>
+                <div class="main-feed">
+                    <div class="type-of-posts">
+                        <div class="user-posts-but">Your Posts</div>
+                        <div class="feed-but">Feed</div>
+                        <div class="liked-posts-but">Liked Posts</div>
+                    </div>
+                    <div class="feed-area">
+                        <div class="feed-post">
+                            <div class="post_top">
+                                <div class="meta-info"></div>
+                                <div class="post-title"><p class="post-title-text"></p></div>
+                            </div>
+                            <div clas="post_main">
+                                <div class="post-content"><p class="post-content-text">Hello! Click on the one of the above options to see posts. Navigate using Left and Right buttons on the screen. Click on + to add a new post!</p></div>
+                            </div>
+                            <button id="like_post" class="like_post">Like</button>
+                        </div>
+                    </div>
+                    <div class="add-post">
+                        <div class="add-button">
+                            <div class="but-text">+</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-place"><div class="next-button"><div class="but-text">&#10093;</div></div></div>
+            </div>
+        </div>
+        <div class="misc-container">
+            <div class="user-badge">
+                <div class="user-name-area">User: <%= user.name %></div>
+                <div class="profile-but"><div class="bdg-but-1">View Profile</div></div>
+                <div class="notif-but"><div class="bdg-but-2">Notifications: </div></div>
+                <div class="msgs-but"><div class="bdg-but-3">Messages</div></div>
+            </div>
+            <div class="misc-stats">
+                <div class="stat-header">
+                    Stats
+                    <hr>
+                </div>
+                <div class="stat-text">
+                    <div class="num-games">
+                        <div class="num-games-txt">Games:</div>
+                        <div class="num-games-val">24</div>
+                    </div>
+                    <div class="w-l-d">
+                        <div class="w-l-d-txt">Won / Lost / Draw: </div>
+                        <div class="w-l-d-val">
+                            <div class="w-val">10&nbsp;</div>
+                            /
+                            <div class="l-val">&nbsp;8&nbsp;</div>
+                            /
+                            <div class="d-val">&nbsp;6</div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/scripts/dashboard_script.js"></script>
+</body>
+</html>
+

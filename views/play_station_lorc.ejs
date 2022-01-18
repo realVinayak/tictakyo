@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style/play_station_lorc_style.css">
+</head>
+<body>
+    <script>
+        let user_id = user._id;
+    </script>
+    <% if (isLive === true) { %>
+        <h1> Here is where you will play a Live Game </h1>
+    <% }else{ %>
+        <h1> Here is where you will play against a Computer</h1>
+    <% } %>
+    <div class="main-container">
+        <div class="game-area">
+            <div class="connect-button" id="connect_button">Connect</div>
+            <div class="name-place-1"><h3 class="player-1">Player 1</h3 class="player-2"><h3>Player 2</h3></div>
+            <div class="game-board">
+            <button id="but1"></button>
+            <button id="but2"></button>
+            <button id="but3"></button>
+            <button id="but4"></button>
+            <button id="but5"></button>
+            <button id="but6"></button>
+            <button id="but7"></button>
+            <button id="but8"></button>
+            <button id="but9"></button>
+            </div>
+        </div>
+        <div class="chat-area">
+            <div class="message-area">
+                <div class="messages"><h2>Message will Look Like This</h2></div>
+                <div class="messages"><h2>Message will Look Like This. And Maybe Like this too hahaha.</h2></div>
+            </div>
+            <div class="send-message">
+                <input type='text' id="message_to_send">
+                <button>Send Message</button>
+            </div>
+        </div>
+    </div>
+    <script src="/scripts/play_station_lorc_script.js"></script>
+</body>
+</html>

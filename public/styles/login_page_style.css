@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+}
+.animation-area {
+	background-color: black;
+	width: 100%;
+	height: 100vh;
+}
+.box-area {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.box-area li {
+	position: absolute;
+	display: block;
+	list-style: none;
+	font-family: 'Roboto';
+    color: white;
+	animation: animate 20s linear infinite;
+	bottom: -150px;
+}
+.box-area li:nth-child(1) {
+	left: 10%;
+	font-size: 4rem;
+	animation-delay: 0s;
+}
+.box-area li:nth-child(2) {
+	left: 20%;
+    font-size: 2rem;
+	animation-delay: 1.5s;
+	animation-duration: 10s;
+}
+.box-area li:nth-child(3) {
+	left: 40%;
+    font-size: 5rem;
+	animation-delay: 5.5s;
+}
+.box-area li:nth-child(4) {
+	left: 60%;
+    font-size: 8rem;
+	animation-delay: 0s;
+	animation-duration: 15s;
+}
+.box-area li:nth-child(5) {
+	left: 80%;
+    font-size: 5rem;
+	animation-delay: 0s;
+}
+.box-area li:nth-child(6) {
+	left: 15%;
+    font-size: 3rem;
+	animation-delay: 3.5s;
+}
+.box-area li:nth-child(7) {
+	left: 30%;
+    font-size: 6rem;
+	animation-delay: 0s;
+}
+.box-area li:nth-child(8) {
+	left: 50%;
+    font-size: 3rem;
+	animation-delay: 3.5s;
+}
+.box-area li:nth-child(9) {
+	left: 70%;
+    font-size: 4rem;
+	animation-delay: 3.5s;
+}
+.box-area li:nth-child(10) {
+	left: 58%;
+    font-size: 7rem;
+	animation-delay: 0s;
+}
+.box-area li:nth-child(11) {
+	left: 25%;
+    font-size: 8rem;
+	animation-delay: 0s;
+    animation-duration: 14s;
+}
+@keyframes animate {
+	0% {
+		transform: translateY(0) rotate(0deg);
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(-800px) rotate(360deg);
+		opacity: 0;
+	}
+}
+.main-cont-area{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+.main-cont-div{
+    z-index: 100;
+    align-self: center;
+    height: 50%;
+    width: 25%;
+    background-color: rgba(85, 84, 84, 0.678);
+    font-family: 'Roboto';
+    display: grid;
+    grid-template-rows: 1fr 4fr 1fr;
+}
+.title-div{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.title{
+    align-self: center;
+    font-size: 2rem;
+    color: white;
+    font-weight: bolder;
+}
+.form-div{
+    height: 100%;
+    width: 100%;
+}
+.form-div > form{
+    height: 100%;
+    width: 100%;
+}
+.form-div-input{
+    height: 100%;
+    width: 100%;
+    background-color: none;
+    padding-top: 0.25rem;
+    display: grid;
+    grid-template-rows: 40% 40%;
+}
+.input-cont{
+    height: 100%;
+    width: 100%;
+    background-color: none;
+}
+.input-area{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.25rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+}
+.but-cont{
+    height: 100%;
+    width: 100%;
+    background-color: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.but-cont > button{
+    height: 30%;
+    width: 30%;
+    font-family: 'Roboto';
+    background-color: black;
+    font-size: 1.25rem;
+    color: white;
+    border-radius: 0.25rem;
+    border-width: 0;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+.but-cont > button:hover{
+    background-color: rgba(0, 0, 0, 0.473);
+}
+.register-redirect{
+    color: white;
+    padding: 1rem;
+}
+.register-redirect > a{
+    text-decoration: underline;
+    color: rgb(115, 147, 252);
+
+}
+.message{
+    padding-left: 1rem;
+}

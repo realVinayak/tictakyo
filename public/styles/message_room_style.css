@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+*{box-sizing: border-box; -webkit-box-sizing: border-box; }
+html, body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: black;
+}
+.main-container{
+    background-color: #161616;
+    display: grid;
+    grid-template-rows: 10% 90%;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+    color: white;
+    font-family: 'Roboto';
+}
+
+.title-div{
+    background-color: #313131;
+    text-align: center;
+    font-size: 3rem;
+    padding-top: 0.5rem;
+}
+
+.content-div{
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.user-names{
+    background-color: #414141;
+    overflow-y: scroll;
+}
+
+.message-send-area{
+    background-color: #525252;
+    display: grid;
+    grid-template-rows: 92% 8%;  
+    font-family: 'Roboto';  
+}
+.message-area{
+    overflow-y: scroll;
+}
+
+.message-send{
+    background-color: #4140406e;
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+.message-send input[type='text']{
+    height: 70%;
+    width: 90%;
+    margin-top: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.25rem;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+.message-send > button{
+    height: 70%;
+    width: 70%;
+    margin-top: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #1d1c1ce0;
+    border-width: 0;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+    box-sizing: border-box;
+    border-radius: 1rem;
+}
+.message-send > button:hover{
+    background-color: #1d1c1c9d;
+}
+.un-content{
+    height: 10%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5rem;
+    background-color: #CA3E47;
+    padding: 1rem;
+    padding-top: 0.6rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.un-name{
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.message-div{
+    height: 15%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    background-color: #EDEDED;
+    font-family: 'Roboto';
+    color: black;
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    border-radius: 0.25rem;
+}
+.msg-meta-info{
+    font-size: 1rem;
+    font-weight: bolder;
+    padding-top: 0.25rem;
+    padding-left: 0.5rem;
+}
+.msg-content{
+    font-size: 1rem;
+    overflow-y: scroll;
+    padding-left: 0.5rem;
+}
