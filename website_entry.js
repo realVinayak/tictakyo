@@ -337,14 +337,16 @@ io.on('connection', socket=>{
             User.findByIdAndUpdate(socket_id_dict[socket.id], {onlineState: 'false'}, (err, docs)=>{
                 if (err) { console.log(err);
                 }else{
+                    if (docs){
                     let index_of_user = online_users.findIndex((elem) => {elem.online_user_id === socket_id_dict[socket.id]})
                     online_users.splice(index_of_user);
                     let name_ = docs.name;
-                    let room_name_pos = `${user_info.user_id}--|--${user_info.user_name}`;
+                    let room_name_pos = `${docs._id}--|--${docs.name}`;
                     if (players_rooms.includes(room_name_pos)){
                         let index_in_pr = players_rooms.indexOf(room_name_pos);
                         players_rooms.splice(index_in_pr);
                     }
+                }
                 }
             })
             let user_disconnected = socket_id_dict_players[socket.id];
