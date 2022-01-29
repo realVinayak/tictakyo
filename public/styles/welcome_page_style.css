@@ -8,6 +8,7 @@
 	height: 100vh;
 }
 .box-area {
+	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
